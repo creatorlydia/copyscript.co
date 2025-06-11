@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Test - CopyScript.co</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-button { 
+            background: #007AFF; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            margin: 10px;
+            display: block;
+        }
+        .test-button:hover { background: #0056b3; }
+        .debug-info { background: #f0f0f0; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>CopyScript.co - Debug Test</h1>
+    
+    <div class="debug-info">
+        <strong>当前页面URL:</strong> <span id="currentUrl"></span><br>
+        <strong>用户代理:</strong> <span id="userAgent"></span><br>
+        <strong>时间戳:</strong> <span id="timestamp"></span>
+    </div>
+
+    <h2>链接测试</h2>
+    
+    <!-- 直接链接测试 -->
+    <a href="https://chat.openai.com" target="_blank" class="test-button">
+        直接链接: ChatGPT (新窗口)
+    </a>
+    
+    <!-- JavaScript测试 -->
+    <button class="test-button" onclick="testOpenWindow('https://www.copy.ai')">
+        JS测试: Copy.ai (新窗口)
+    </button>
+    
+    <button class="test-button" onclick="testDirectNavigation('https://www.deepl.com')">
+        JS测试: DeepL (当前窗口)
+    </button>
+    
+    <!-- 模拟原始功能 -->
+    <div style="border: 1px solid #ccc; padding: 20px; margin: 20px 0; border-radius: 10px;">
+        <h3>模拟工具卡片</h3>
+        <p>ChatGPT - AI Assistant</p>
+        <button class="test-button" onclick="openToolModal('ChatGPT', 'https://chat.openai.com')">
+            点击测试弹窗功能
+        </button>
+    </div>
+
+    <!-- 弹窗 -->
+    <div id="testModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 10px; text-align: center;">
+            <h3 id="modalTitle"></h3>
+            <p>确认要访问这个工具吗？</p>
+            <button class="test-button" id="modalVisitBtn">访问工具</button>
+            <button class="test-button" onclick="closeTestModal()" style="background: #666;">取消</button>
+        </div>
+    </div>
+
+    <script>
+        // 显示调试信息
+        document.getElementById('currentUrl').textContent = window.location.href;
+        document.getElementById('userAgent').textContent = navigator.userAgent;
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+
+        // 测试函数
+        function testOpenWindow(url) {
+            console.log('尝试打开:', url);
+            try {
+                const newWindow = window.open(url, '_blank');
+                if (newWindow) {
+                    console.log('✅ 成功打开新窗口');
+                    alert('✅ 新窗口打开成功！');
+                } else {
+                    console.log('❌ 弹窗被阻止');
+                    alert('❌ 弹窗被浏览器阻止，请检查弹窗设置');
+                }
+            } catch (error) {
+                console.error('❌ 错误:', error);
+                alert('❌ 打开失败: ' + error.message);
+            }
+        }
+
+        function testDirectNavigation(url) {
+            console.log('尝试直接跳转:', url);
+            try {
+                window.location.href = url;
+            } catch (error) {
+                console.error('❌ 跳转失败:', error);
+                alert('❌ 跳转失败: ' + error.message);
+            }
+        }
+
+        function openToolModal(toolName, toolUrl) {
+            console.log('打开弹窗:', toolName, toolUrl);
+            document.getElementById('modalTitle').textContent = toolName;
+            document.getElementById('modalVisitBtn').onclick = () => {
+                testOpenWindow(toolUrl);
+                closeTestModal();
+            };
+            document.getElementById('testModal').style.display = 'block';
+        }
+
+        function closeTestModal() {
+            document.getElementById('testModal').style.display = 'none';
+        }
+
+        // 错误捕获
+        window.addEventListener('error', function(e) {
+            console.error('页面错误:', e.error);
+            alert('页面错误: ' + e.message);
+        });
+
+        console.log('🚀 调试页面已加载完成');
+    </script>
+</body>
+</html>
