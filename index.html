@@ -1,413 +1,163 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Writing Toolkit | Making Writing Effortless</title>
-    
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-    
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_CODE" />
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Discover the best AI writing tools for copywriting, content creation, translation, and more. Curated collection of premium AI tools to boost your productivity.">
-    <meta name="keywords" content="AI writing tools, copywriting, content creation, AI translator, writing assistant, marketing copy, AI tools">
-    <meta name="author" content="CopyScript.co">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="AI Writing Toolkit | Making Writing Effortless">
-    <meta property="og:description" content="Curated premium AI tools to make writing more efficient and intelligent">
-    <meta property="og:image" content="https://copyscript.co/og-image.jpg">
-    <meta property="og:url" content="https://copyscript.co">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI Writing Toolkit | Making Writing Effortless">
-    <meta name="twitter:description" content="Curated premium AI tools to make writing more efficient and intelligent">
-    <meta name="twitter:image" content="https://copyscript.co/twitter-image.jpg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://copyscript.co">
-    
-    <!-- Structured Data for Search Engines -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "CopyScript.co",
-        "description": "Curated premium AI tools for writing and content creation",
-        "url": "https://copyscript.co",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://copyscript.co/?search={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script>
-    
-    <!-- Microsoft Clarity (Free heatmap alternative) -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
-    </script>
-    
-    <!-- Meta Pixel (Optional for social media tracking) -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR_PIXEL_ID');
-        fbq('track', 'PageView');
-    </script>
+    <title>CopyScript.co - AI Copywriting & Content Tools Hub</title>
+    <meta name="description" content="Discover the best AI tools for copywriting, content creation, PPT generation, PDF conversion, and writing optimization. Your ultimate AI content toolkit.">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            color: #1d1d1f;
+            color: #333;
+            line-height: 1.6;
         }
-
+        
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
-
+        
         .header {
             text-align: center;
-            margin-bottom: 60px;
-            padding-top: 40px;
-        }
-
-        .header h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
+            margin-bottom: 50px;
             color: white;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
+            padding: 40px 0;
         }
-
-        .header p {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 400;
+        
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.4em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header .description {
+            font-size: 1.1em;
+            opacity: 0.85;
             max-width: 600px;
             margin: 0 auto;
-            line-height: 1.5;
         }
-
-        .search-box {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 16px 24px;
-            margin: 40px auto;
-            max-width: 500px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        
+        .category-section {
+            margin-bottom: 60px;
         }
-
-        .search-input {
-            width: 100%;
-            border: none;
-            outline: none;
-            font-size: 1.1rem;
-            background: transparent;
-            color: #1d1d1f;
-        }
-
-        .search-input::placeholder {
-            color: #86868b;
-        }
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .category {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .category h2 {
-            font-size: 1.5rem;
+        
+        .category-title {
+            font-size: 2.2em;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
             font-weight: 600;
-            color: #1d1d1f;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
-
-        .category-icon {
-            font-size: 1.8rem;
-        }
-
+        
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
-
+        
         .tool-card {
-            background: white;
-            border-radius: 16px;
-            padding: 24px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.2);
             cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
-            position: relative;
-            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
         }
-
+        
         .tool-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-            border-color: #007AFF;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
         }
-
-        .tool-card:hover::before {
-            opacity: 1;
-        }
-
-        .tool-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #007AFF, #5856D6);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .tool-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-
+        
         .tool-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            background: linear-gradient(135deg, #007AFF, #5856D6);
-            color: white;
-            flex-shrink: 0;
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
         }
-
-        .tool-info h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #1d1d1f;
-            margin-bottom: 4px;
+        
+        .tool-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #2d3748;
+            text-align: center;
         }
-
-        .tool-info .tool-tag {
-            font-size: 0.9rem;
-            color: #007AFF;
-            font-weight: 500;
-        }
-
+        
         .tool-description {
-            color: #86868b;
-            font-size: 0.95rem;
+            color: #666;
+            text-align: center;
+            font-size: 1em;
             line-height: 1.5;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
-
-        .tool-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 16px;
-        }
-
-        .feature-tag {
-            background: #f0f9ff;
-            color: #0284c7;
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .tool-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .visit-btn {
-            background: #007AFF;
+        
+        .tool-link {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
+            text-decoration: none;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
             transition: all 0.3s ease;
+            font-size: 1em;
         }
-
-        .visit-btn:hover {
-            background: #0056b3;
-            transform: scale(1.05);
+        
+        .tool-link:hover {
+            background: linear-gradient(45deg, #5a67d8, #6b46c1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
-
-        .tool-status {
-            font-size: 0.8rem;
-            color: #34c759;
-            font-weight: 500;
-        }
-
+        
         .footer {
             text-align: center;
-            margin-top: 60px;
-            padding: 40px 0;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .footer p {
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .modal h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-            color: #1d1d1f;
-        }
-
-        .modal p {
-            color: #86868b;
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }
-
-        .modal-buttons {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: #007AFF;
             color: white;
+            opacity: 0.9;
+            margin-top: 80px;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.2);
         }
-
-        .btn-primary:hover {
-            background: #0056b3;
+        
+        .footer p {
+            margin-bottom: 10px;
         }
-
-        .btn-secondary {
-            background: #f0f0f0;
-            color: #1d1d1f;
-        }
-
-        .btn-secondary:hover {
-            background: #e0e0e0;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
+        
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 2.5rem;
+                font-size: 2.5em;
             }
             
-            .categories {
-                grid-template-columns: 1fr;
+            .category-title {
+                font-size: 1.8em;
             }
             
             .tools-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 15px;
             }
         }
     </style>
@@ -415,492 +165,234 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>AI Writing Toolkit</h1>
-            <p>Curated premium AI tools to make writing more efficient and intelligent</p>
-            
-            <div class="search-box">
-                <input type="text" class="search-input" placeholder="Search AI tools..." id="searchInput">
+            <h1>✨ CopyScript.co</h1>
+            <p class="subtitle">AI Copywriting & Content Tools Hub</p>
+            <p class="description">Discover the most powerful AI tools for copywriting, content creation, presentations, and document processing. Boost your productivity with cutting-edge AI technology.</p>
+        </div>
+        
+        <!-- AI Copywriting Tools -->
+        <div class="category-section">
+            <h2 class="category-title">📝 AI Copywriting & Content Creation</h2>
+            <div class="tools-grid">
+                <a href="https://www.copy.ai" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🚀</div>
+                    <h3 class="tool-title">Copy.ai</h3>
+                    <p class="tool-description">Generate high-converting copy for ads, emails, websites, and social media with AI-powered writing assistant.</p>
+                    <div class="tool-link">Launch Copy.ai</div>
+                </a>
+                
+                <a href="https://www.jasper.ai" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🎯</div>
+                    <h3 class="tool-title">Jasper AI</h3>
+                    <p class="tool-description">Create amazing content 10x faster with AI. Perfect for blogs, social media, and marketing campaigns.</p>
+                    <div class="tool-link">Launch Jasper AI</div>
+                </a>
+                
+                <a href="https://writesonic.com" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">⚡</div>
+                    <h3 class="tool-title">Writesonic</h3>
+                    <p class="tool-description">AI writing tool for creating SEO-optimized content, ad copy, and long-form articles in seconds.</p>
+                    <div class="tool-link">Launch Writesonic</div>
+                </a>
+                
+                <a href="https://www.anyword.com" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">📊</div>
+                    <h3 class="tool-title">Anyword</h3>
+                    <p class="tool-description">Data-driven AI copywriting platform that predicts content performance before you publish.</p>
+                    <div class="tool-link">Launch Anyword</div>
+                </a>
+                
+                <a href="https://www.peppertype.ai" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🌶️</div>
+                    <h3 class="tool-title">Peppertype AI</h3>
+                    <p class="tool-description">Generate better content faster with AI that understands your brand voice and style.</p>
+                    <div class="tool-link">Launch Peppertype</div>
+                </a>
+                
+                <a href="https://rytr.me" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">✍️</div>
+                    <h3 class="tool-title">Rytr</h3>
+                    <p class="tool-description">AI writing assistant that helps create killer content, effortlessly. Perfect for beginners and pros.</p>
+                    <div class="tool-link">Launch Rytr</div>
+                </a>
             </div>
         </div>
-
-        <div class="categories" id="categoriesContainer">
-            <div class="category">
-                <h2><span class="category-icon">✍️</span>Content Writing</h2>
-                <div class="tools-grid">
-                    <div class="tool-card" data-url="https://chat.openai.com">
-                        <div class="tool-header">
-                            <div class="tool-icon">🤖</div>
-                            <div class="tool-info">
-                                <h3>ChatGPT</h3>
-                                <div class="tool-tag">AI Assistant</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">All-in-one AI assistant excelling at copywriting, article writing, and content optimization</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Copy Generation</span>
-                            <span class="feature-tag">Content Polish</span>
-                            <span class="feature-tag">Multilingual</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free + Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://www.notion.so">
-                        <div class="tool-header">
-                            <div class="tool-icon">📝</div>
-                            <div class="tool-info">
-                                <h3>Notion AI</h3>
-                                <div class="tool-tag">Smart Notes</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">AI writing assistant integrated into Notion for quick content generation and editing</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Smart Continue</span>
-                            <span class="feature-tag">Format Adjust</span>
-                            <span class="feature-tag">Team Collab</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://www.copy.ai">
-                        <div class="tool-header">
-                            <div class="tool-icon">📄</div>
-                            <div class="tool-info">
-                                <h3>Copy.ai</h3>
-                                <div class="tool-tag">Marketing Copy</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">Professional marketing copy generator with multiple templates and writing styles</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Marketing Copy</span>
-                            <span class="feature-tag">Ad Copy</span>
-                            <span class="feature-tag">Rich Templates</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free + Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://www.jasper.ai">
-                        <div class="tool-header">
-                            <div class="tool-icon">🚀</div>
-                            <div class="tool-info">
-                                <h3>Jasper</h3>
-                                <div class="tool-tag">AI Writer</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">AI writing assistant for marketing teams, creating high-quality content at scale</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Long-form</span>
-                            <span class="feature-tag">Brand Voice</span>
-                            <span class="feature-tag">Team Features</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://www.writesonic.com">
-                        <div class="tool-header">
-                            <div class="tool-icon">⚡</div>
-                            <div class="tool-info">
-                                <h3>Writesonic</h3>
-                                <div class="tool-tag">Content Generator</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">AI-powered writing tool for creating articles, ads, and marketing content quickly</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Article Writer</span>
-                            <span class="feature-tag">SEO Optimized</span>
-                            <span class="feature-tag">Multi-language</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free + Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://www.grammarly.com">
-                        <div class="tool-header">
-                            <div class="tool-icon">📝</div>
-                            <div class="tool-info">
-                                <h3>Grammarly</h3>
-                                <div class="tool-tag">Writing Assistant</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">Advanced grammar checker and writing enhancement tool with AI-powered suggestions</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Grammar Check</span>
-                            <span class="feature-tag">Style Guide</span>
-                            <span class="feature-tag">Plagiarism Check</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free + Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category">
-                <h2><span class="category-icon">🌐</span>Translation Tools</h2>
-                <div class="tools-grid">
-                    <div class="tool-card" data-url="https://www.deepl.com/translator">
-                        <div class="tool-header">
-                            <div class="tool-icon">🔄</div>
-                            <div class="tool-info">
-                                <h3>DeepL</h3>
-                                <div class="tool-tag">Pro Translation</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">Industry-leading AI translation tool with quality rivaling human translation</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">High Accuracy</span>
-                            <span class="feature-tag">Multilingual</span>
-                            <span class="feature-tag">Doc Translation</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free + Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://translate.google.com">
-                        <div class="tool-header">
-                            <div class="tool-icon">🌏</div>
-                            <div class="tool-info">
-                                <h3>Google Translate</h3>
-                                <div class="tool-tag">Universal</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">Free translation service supporting 100+ languages with comprehensive features</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">100+ Languages</span>
-                            <span class="feature-tag">Voice Translation</span>
-                            <span class="feature-tag">Image Translation</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://fanyi.baidu.com">
-                        <div class="tool-header">
-                            <div class="tool-icon">🐻</div>
-                            <div class="tool-info">
-                                <h3>Baidu Translate</h3>
-                                <div class="tool-tag">Chinese-Optimized</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">Chinese-optimized translation tool supporting specialized domain translations</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Chinese Focus</span>
-                            <span class="feature-tag">Pro Vocabulary</span>
-                            <span class="feature-tag">Real-time</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free + Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category">
-                <h2><span class="category-icon">📊</span>Presentation Tools</h2>
-                <div class="tools-grid">
-                    <div class="tool-card" data-url="https://gamma.app">
-                        <div class="tool-header">
-                            <div class="tool-icon">🎨</div>
-                            <div class="tool-info">
-                                <h3>Gamma</h3>
-                                <div class="tool-tag">AI Presentation</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">Create beautiful presentations and websites with AI, no design experience needed</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Auto Design</span>
-                            <span class="feature-tag">Rich Templates</span>
-                            <span class="feature-tag">Responsive</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free + Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://www.beautiful.ai">
-                        <div class="tool-header">
-                            <div class="tool-icon">💼</div>
-                            <div class="tool-info">
-                                <h3>Beautiful.AI</h3>
-                                <div class="tool-tag">Smart PPT</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">Intelligent PowerPoint creation tool with automatic layout and design optimization</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Smart Layout</span>
-                            <span class="feature-tag">Team Collab</span>
-                            <span class="feature-tag">Data Viz</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://tome.app">
-                        <div class="tool-header">
-                            <div class="tool-icon">📖</div>
-                            <div class="tool-info">
-                                <h3>Tome</h3>
-                                <div class="tool-tag">Story Presentation</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">AI-powered storytelling presentation tool that makes presentations more engaging</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Storytelling</span>
-                            <span class="feature-tag">Interactive</span>
-                            <span class="feature-tag">Multimedia</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free + Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category">
-                <h2><span class="category-icon">🔄</span>Format Conversion</h2>
-                <div class="tools-grid">
-                    <div class="tool-card" data-url="https://smallpdf.com">
-                        <div class="tool-header">
-                            <div class="tool-icon">📋</div>
-                            <div class="tool-info">
-                                <h3>SmallPDF</h3>
-                                <div class="tool-tag">PDF Tools</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">All-in-one PDF toolkit supporting conversion between PDF and Word, Excel formats</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Format Convert</span>
-                            <span class="feature-tag">Compression</span>
-                            <span class="feature-tag">Online Process</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free + Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://www.ilovepdf.com">
-                        <div class="tool-header">
-                            <div class="tool-icon">❤️</div>
-                            <div class="tool-info">
-                                <h3>iLovePDF</h3>
-                                <div class="tool-tag">PDF Processing</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">Free online PDF toolkit with conversion, editing, merging and more features</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Multi-function</span>
-                            <span class="feature-tag">Batch Process</span>
-                            <span class="feature-tag">Cloud-based</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free + Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://www.adobe.com/acrobat/online/pdf-to-word.html">
-                        <div class="tool-header">
-                            <div class="tool-icon">🔺</div>
-                            <div class="tool-info">
-                                <h3>Adobe Acrobat</h3>
-                                <div class="tool-tag">Pro Conversion</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">Adobe's official PDF conversion tool maintaining original formatting and layout</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">High Fidelity</span>
-                            <span class="feature-tag">OCR Recognition</span>
-                            <span class="feature-tag">Pro Quality</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category">
-                <h2><span class="category-icon">🎥</span>Audio & Video</h2>
-                <div class="tools-grid">
-                    <div class="tool-card" data-url="https://otter.ai">
-                        <div class="tool-header">
-                            <div class="tool-icon">🦦</div>
-                            <div class="tool-info">
-                                <h3>Otter.ai</h3>
-                                <div class="tool-tag">Speech-to-Text</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">AI speech-to-text tool supporting real-time transcription and meeting notes</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Real-time</span>
-                            <span class="feature-tag">Meeting Notes</span>
-                            <span class="feature-tag">Multi-speaker</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free + Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://www.rev.com">
-                        <div class="tool-header">
-                            <div class="tool-icon">🎬</div>
-                            <div class="tool-info">
-                                <h3>Rev</h3>
-                                <div class="tool-tag">Transcription</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">Professional audio and video transcription service supporting multiple languages</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">High Accuracy</span>
-                            <span class="feature-tag">Fast Delivery</span>
-                            <span class="feature-tag">Multilingual</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://trint.com">
-                        <div class="tool-header">
-                            <div class="tool-icon">📺</div>
-                            <div class="tool-info">
-                                <h3>Trint</h3>
-                                <div class="tool-tag">Smart Transcription</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">AI-powered transcription and subtitle creation tool for multimedia content</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Smart Edit</span>
-                            <span class="feature-tag">Subtitle Creation</span>
-                            <span class="feature-tag">Team Collab</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Paid</span>
-                            <button class="visit-btn">Visit Tool</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category">
-                <h2><span class="category-icon">🤝</span>Meeting Assistant</h2>
-                <div class="tools-grid">
-                    <div class="tool-card" data-url="https://fireflies.ai">
-                        <div class="tool-header">
-                            <div class="tool-icon">🔥</div>
-                            <div class="tool-info">
-                                <h3>Fireflies.ai</h3>
-                                <div class="tool-tag">Meeting Notes</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">AI meeting assistant that automatically records, transcribes and summarizes meetings</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">Auto Record</span>
-                            <span class="feature-tag">Smart Summary</span>
-                            <span class="feature-tag">Task Extract</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">Free + Paid</span>
-                            <button class="visit-btn">Visit Tool</button><div class="tool-description">AI会议助手，自动记录、转录和总结会议内容</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">自动记录</span>
-                            <span class="feature-tag">智能总结</span>
-                            <span class="feature-tag">任务提取</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">免费+付费</span>
-                            <button class="visit-btn">访问工具</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://grain.com">
-                        <div class="tool-header">
-                            <div class="tool-icon">🌾</div>
-                            <div class="tool-info">
-                                <h3>Grain</h3>
-                                <div class="tool-tag">会议洞察</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">专为销售和客户成功团队设计的会议记录和分析工具</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">会议分析</span>
-                            <span class="feature-tag">客户洞察</span>
-                            <span class="feature-tag">CRM集成</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">付费</span>
-                            <button class="visit-btn">访问工具</button>
-                        </div>
-                    </div>
-
-                    <div class="tool-card" data-url="https://www.chorus.ai">
-                        <div class="tool-header">
-                            <div class="tool-icon">🎵</div>
-                            <div class="tool-info">
-                                <h3>Chorus</h3>
-                                <div class="tool-tag">对话智能</div>
-                            </div>
-                        </div>
-                        <div class="tool-description">企业级对话智能平台，分析销售和客服对话</div>
-                        <div class="tool-features">
-                            <span class="feature-tag">对话分析</span>
-                            <span class="feature-tag">销售洞察</span>
-                            <span class="feature-tag">培训优化</span>
-                        </div>
-                        <div class="tool-footer">
-                            <span class="tool-status">企业版</span>
-                            <button class="visit-btn">访问工具</button>
-                        </div>
-                    </div>
-                </div>
+        
+        <!-- AI PPT & Presentation Tools -->
+        <div class="category-section">
+            <h2 class="category-title">📊 AI PPT & Presentation Tools</h2>
+            <div class="tools-grid">
+                <a href="https://gamma.app" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🎨</div>
+                    <h3 class="tool-title">Gamma</h3>
+                    <p class="tool-description">Create beautiful presentations, documents, and websites with AI. No design skills required.</p>
+                    <div class="tool-link">Launch Gamma</div>
+                </a>
+                
+                <a href="https://tome.app" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">📖</div>
+                    <h3 class="tool-title">Tome</h3>
+                    <p class="tool-description">AI-powered storytelling format that can generate entire narratives from a simple prompt.</p>
+                    <div class="tool-link">Launch Tome</div>
+                </a>
+                
+                <a href="https://www.beautiful.ai" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">💎</div>
+                    <h3 class="tool-title">Beautiful.AI</h3>
+                    <p class="tool-description">Smart presentation software that builds stunning slides with AI-powered design assistance.</p>
+                    <div class="tool-link">Launch Beautiful.AI</div>
+                </a>
+                
+                <a href="https://www.slidesai.io" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🎯</div>
+                    <h3 class="tool-title">SlidesAI</h3>
+                    <p class="tool-description">Create presentation slides with AI in seconds. Turn any text into engaging slides automatically.</p>
+                    <div class="tool-link">Launch SlidesAI</div>
+                </a>
+                
+                <a href="https://www.decktopus.com" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🐙</div>
+                    <h3 class="tool-title">Decktopus</h3>
+                    <p class="tool-description">AI presentation maker that creates professional decks with smart layouts and design suggestions.</p>
+                    <div class="tool-link">Launch Decktopus</div>
+                </a>
+                
+                <a href="https://presentations.ai" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🤖</div>
+                    <h3 class="tool-title">Presentations.AI</h3>
+                    <p class="tool-description">Transform ideas into stunning presentations instantly with AI-powered design and content generation.</p>
+                    <div class="tool-link">Launch Presentations.AI</div>
+                </a>
             </div>
         </div>
-
+        
+        <!-- AI PDF & Document Tools -->
+        <div class="category-section">
+            <h2 class="category-title">📄 AI PDF & Document Processing</h2>
+            <div class="tools-grid">
+                <a href="https://www.chatpdf.com" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">💬</div>
+                    <h3 class="tool-title">ChatPDF</h3>
+                    <p class="tool-description">Chat with any PDF document. Ask questions, get summaries, and find information instantly.</p>
+                    <div class="tool-link">Launch ChatPDF</div>
+                </a>
+                
+                <a href="https://www.pdfgpt.io" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🧠</div>
+                    <h3 class="tool-title">PDF GPT</h3>
+                    <p class="tool-description">AI-powered PDF reader that lets you interact with documents using natural language queries.</p>
+                    <div class="tool-link">Launch PDF GPT</div>
+                </a>
+                
+                <a href="https://www.humata.ai" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🔍</div>
+                    <h3 class="tool-title">Humata AI</h3>
+                    <p class="tool-description">Ask questions about your files and get answers powered by AI. Perfect for research and analysis.</p>
+                    <div class="tool-link">Launch Humata AI</div>
+                </a>
+                
+                <a href="https://www.docsumo.com" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">📋</div>
+                    <h3 class="tool-title">Docsumo</h3>
+                    <p class="tool-description">AI-powered document processing that extracts data from PDFs and images automatically.</p>
+                    <div class="tool-link">Launch Docsumo</div>
+                </a>
+                
+                <a href="https://www.documint.me" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">⚙️</div>
+                    <h3 class="tool-title">Documint</h3>
+                    <p class="tool-description">Generate PDF documents from templates using AI and automation. Perfect for reports and contracts.</p>
+                    <div class="tool-link">Launch Documint</div>
+                </a>
+                
+                <a href="https://www.adobe.com/acrobat/online/pdf-editor.html" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🎨</div>
+                    <h3 class="tool-title">Adobe PDF AI</h3>
+                    <p class="tool-description">Edit, convert, and enhance PDFs with Adobe's AI-powered tools and smart features.</p>
+                    <div class="tool-link">Launch Adobe PDF</div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- AI Writing Enhancement Tools -->
+        <div class="category-section">
+            <h2 class="category-title">✨ AI Writing Enhancement & Optimization</h2>
+            <div class="tools-grid">
+                <a href="https://www.grammarly.com" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">✅</div>
+                    <h3 class="tool-title">Grammarly</h3>
+                    <p class="tool-description">AI writing assistant that helps improve grammar, clarity, engagement, and delivery in your writing.</p>
+                    <div class="tool-link">Launch Grammarly</div>
+                </a>
+                
+                <a href="https://www.notion.so/product/ai" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">📝</div>
+                    <h3 class="tool-title">Notion AI</h3>
+                    <p class="tool-description">AI writing partner that helps brainstorm, edit, summarize, and transform your writing effortlessly.</p>
+                    <div class="tool-link">Launch Notion AI</div>
+                </a>
+                
+                <a href="https://quillbot.com" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🪶</div>
+                    <h3 class="tool-title">QuillBot</h3>
+                    <p class="tool-description">AI-powered paraphrasing tool that rewrites and enhances your writing while maintaining original meaning.</p>
+                    <div class="tool-link">Launch QuillBot</div>
+                </a>
+                
+                <a href="https://www.wordtune.com" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🎵</div>
+                    <h3 class="tool-title">Wordtune</h3>
+                    <p class="tool-description">AI writing companion that helps you say what you mean with clarity, confidence, and authenticity.</p>
+                    <div class="tool-link">Launch Wordtune</div>
+                </a>
+                
+                <a href="https://www.deepl.com/write" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">🔧</div>
+                    <h3 class="tool-title">DeepL Write</h3>
+                    <p class="tool-description">AI writing assistant that helps improve and perfect your writing with intelligent suggestions.</p>
+                    <div class="tool-link">Launch DeepL Write</div>
+                </a>
+                
+                <a href="https://www.hemingwayapp.com" target="_blank" rel="noopener" class="tool-card">
+                    <div class="tool-icon">📚</div>
+                    <h3 class="tool-title">Hemingway Editor</h3>
+                    <p class="tool-description">AI-powered editor that makes your writing bold and clear by highlighting complex sentences and errors.</p>
+                    <div class="tool-link">Launch Hemingway</div>
+                </a>
+            </div>
+        </div>
+        
         <div class="footer">
-            <p>Curated premium AI tools to boost writing efficiency</p>
-            <p>© 2025 CopyScript.co - All rights reserved</p>
+            <p><strong>CopyScript.co</strong> - Your Ultimate AI Content Toolkit</p>
+            <p>Empowering creators with the best AI tools for copywriting, content creation, and document processing.</p>
+            <p>© 2025 CopyScript.co - Boost Your Productivity with AI</p>
         </div>
-
-        <!-- Tool Detail Modal -->
-        <div id="toolModal" class="modal">
-            <div class="modal-content">
-                <h3 id="modalToolName"></h3>
-                <p id="modalToolDescription"></p>
-                <div class="modal-buttons">
-                    <button class="btn btn-primary" id="modalVisitBtn">Visit Tool</button>
-                    <button class="btn btn-secondary" onclick="closeModal()">Close</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Analytics Pixels -->
-        <noscript>
-            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
-        </noscript>
+    </div>
+    
+    <script>
+        // Track clicks for analytics (console only)
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.tool-card')) {
+                const toolName = e.target.closest('.tool-card').querySelector('.tool-title').textContent;
+                console.log('User clicked: ' + toolName);
+            }
+        });
+        
+        // Loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('CopyScript.co loaded successfully!');
+            
+            const cards = document.querySelectorAll('.tool-card');
+            cards.forEach(function(card, index) {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(function() {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
