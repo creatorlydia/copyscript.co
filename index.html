@@ -45,12 +45,37 @@
             font-size: 1.2rem;
         }
         
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: -10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .category-nav a {
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .category-nav a:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        
         .search-box {
             background: white;
             border-radius: 50px;
             padding: 15px 25px;
             margin-bottom: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding-bottom: 10px;
         }
         
         .search-input {
@@ -89,52 +114,62 @@
         
         .links {
             display: grid;
-            gap: 12px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
         }
         
         .link-item {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            padding: 12px 15px;
+            justify-content: center;
+            padding: 15px 5px;
             border-radius: 8px;
             text-decoration: none;
             color: #4a5568;
             background: #f7fafc;
             transition: all 0.3s ease;
             cursor: pointer;
+            text-align: center;
+            aspect-ratio: 1 / 1;
         }
         
         .link-item:hover {
             background: #e2e8f0;
             color: #2d3748;
-            transform: translateX(5px);
+            transform: translateY(-5px);
         }
         
         .link-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 12px;
+            width: 32px;
+            height: 32px;
+            margin-bottom: 10px;
             background: #5a67d8;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 12px;
+            font-size: 16px;
+            flex-shrink: 0;
         }
         
         .link-text {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         .link-title {
             font-weight: 600;
-            margin-bottom: 2px;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            word-break: break-word;
         }
         
         .link-desc {
-            font-size: 0.9rem;
-            color: #718096;
+            display: none;
         }
         
         footer {
@@ -158,6 +193,12 @@
                 padding: 15px;
             }
         }
+        
+        @media (max-width: 480px) {
+            .links {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -166,6 +207,10 @@
             <h1>🌟 Link Hub</h1>
             <p class="subtitle">Discover quality websites and boost your productivity</p>
         </header>
+        
+        <nav class="category-nav" id="categoryNav">
+            <!-- Category links will be injected here by JavaScript -->
+        </nav>
         
         <div class="search-box">
             <input type="text" class="search-input" placeholder="Search websites..." id="searchInput">
@@ -366,11 +411,22 @@
         // Render categories and websites
         function renderCategories() {
             const container = document.getElementById('categoriesContainer');
+            const navContainer = document.getElementById('categoryNav');
             container.innerHTML = '';
+            navContainer.innerHTML = '';
             
             Object.entries(websites).forEach(([category, sites]) => {
+                const categoryId = 'category-' + category.replace(/\s+/g, '-').toLowerCase();
+
+                // Create nav link
+                const navLink = document.createElement('a');
+                navLink.href = '#' + categoryId;
+                navLink.textContent = category;
+                navContainer.appendChild(navLink);
+
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'category';
+                categoryDiv.id = categoryId;
                 
                 const categoryTitle = document.createElement('h2');
                 categoryTitle.textContent = category;
@@ -457,6 +513,21 @@
         // 初始化页面
         document.addEventListener('DOMContentLoaded', () => {
             renderCategories();
+
+            // Add smooth scrolling for nav links
+            document.getElementById('categoryNav').addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    const targetId = e.target.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
         });
 
         // 错误处理
