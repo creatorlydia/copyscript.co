@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CopyScript.co - AI Copywriting & Content Tools Hub</title>
-    <meta name="description" content="Discover the best AI tools for copywriting, content creation, PPT generation, PDF conversion, and writing optimization. Your ultimate AI content toolkit.">
+    <title>Link Hub - CopyScript</title>
+    <meta name="description" content="A curated list of useful websites, online tools, and resources.">
+    
+    <!-- 基础样式 -->
     <style>
         * {
             margin: 0;
@@ -17,538 +19,479 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             color: #333;
-            line-height: 1.6;
         }
         
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
         
-        .header {
+        header {
             text-align: center;
-            margin-bottom: 50px;
-            color: white;
+            margin-bottom: 40px;
             padding: 40px 0;
         }
         
-        .header h1 {
-            font-size: 3.5em;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-            font-weight: 700;
-        }
-        
-        .header .subtitle {
-            font-size: 1.4em;
-            opacity: 0.95;
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
-        
-        .header .description {
-            font-size: 1.1em;
-            opacity: 0.85;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .category-section {
-            margin-bottom: 60px;
-        }
-        
-        .category-title {
-            font-size: 2.2em;
+        h1 {
             color: white;
-            text-align: center;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-            font-weight: 600;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+        .subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
         }
         
-        .tool-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255,255,255,0.2);
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
+        .search-box {
+            background: white;
+            border-radius: 50px;
+            padding: 15px 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
-        .tool-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-        }
-        
-        .tool-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            display: block;
-            text-align: center;
-        }
-        
-        .tool-title {
-            font-size: 1.5em;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #2d3748;
-            text-align: center;
-        }
-        
-        .tool-description {
-            color: #666;
-            text-align: center;
-            font-size: 1em;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-        
-        .tool-link {
-            display: inline-block;
+        .search-input {
             width: 100%;
-            padding: 12px 20px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background: transparent;
+        }
+        
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .category {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category h2 {
+            color: #5a67d8;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        
+        .links {
+            display: grid;
+            gap: 12px;
+        }
+        
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border-radius: 8px;
             text-decoration: none;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: 600;
+            color: #4a5568;
+            background: #f7fafc;
             transition: all 0.3s ease;
-            font-size: 1em;
+            cursor: pointer;
         }
         
-        .tool-link:hover {
-            background: linear-gradient(45deg, #5a67d8, #6b46c1);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        .link-item:hover {
+            background: #e2e8f0;
+            color: #2d3748;
+            transform: translateX(5px);
         }
         
-        .footer {
-            text-align: center;
+        .link-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            background: #5a67d8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            opacity: 0.9;
-            margin-top: 80px;
-            padding: 40px 0;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 12px;
         }
         
-        .footer p {
-            margin-bottom: 10px;
+        .link-text {
+            flex: 1;
         }
         
+        .link-title {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .link-desc {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        /* 响应式设计 */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5em;
+            h1 {
+                font-size: 2rem;
             }
             
-            .category-title {
-                font-size: 1.8em;
-            }
-            
-            .tools-grid {
+            .categories {
                 grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>✨ CopyScript.co</h1>
-            <p class="subtitle">AI Copywriting & Content Tools Hub</p>
-            <p class="description">Discover the most powerful AI tools for copywriting, content creation, presentations, and document processing. Boost your productivity with cutting-edge AI technology.</p>
+        <header>
+            <h1>🌟 Link Hub</h1>
+            <p class="subtitle">Discover quality websites and boost your productivity</p>
+        </header>
+        
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search websites..." id="searchInput">
         </div>
         
-        <!-- AI Copywriting Tools -->
-        <div class="category-section">
-            <h2 class="category-title">📝 AI Copywriting & Content Creation</h2>
-            <div class="tools-grid">
-                <a href="https://www.copy.ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🚀</div>
-                    <h3 class="tool-title">Copy.ai</h3>
-                    <p class="tool-description">Generate high-converting copy for ads, emails, websites, and social media with AI-powered writing assistant.</p>
-                    <div class="tool-link">Launch Copy.ai</div>
-                </a>
-                
-                <a href="https://www.jasper.ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🎯</div>
-                    <h3 class="tool-title">Jasper AI</h3>
-                    <p class="tool-description">Create amazing content 10x faster with AI. Perfect for blogs, social media, and marketing campaigns.</p>
-                    <div class="tool-link">Launch Jasper AI</div>
-                </a>
-                
-                <a href="https://writesonic.com" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">⚡</div>
-                    <h3 class="tool-title">Writesonic</h3>
-                    <p class="tool-description">AI writing tool for creating SEO-optimized content, ad copy, and long-form articles in seconds.</p>
-                    <div class="tool-link">Launch Writesonic</div>
-                </a>
-                
-                <a href="https://www.anyword.com" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">📊</div>
-                    <h3 class="tool-title">Anyword</h3>
-                    <p class="tool-description">Data-driven AI copywriting platform that predicts content performance before you publish.</p>
-                    <div class="tool-link">Launch Anyword</div>
-                </a>
-                
-                <a href="https://www.peppertype.ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🌶️</div>
-                    <h3 class="tool-title">Peppertype AI</h3>
-                    <p class="tool-description">Generate better content faster with AI that understands your brand voice and style.</p>
-                    <div class="tool-link">Launch Peppertype</div>
-                </a>
-                
-                <a href="https://rytr.me" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">✍️</div>
-                    <h3 class="tool-title">Rytr</h3>
-                    <p class="tool-description">AI writing assistant that helps create killer content, effortlessly. Perfect for beginners and pros.</p>
-                    <div class="tool-link">Launch Rytr</div>
-                </a>
-                
-                <a href="https://i10x.ai/?fpr=toolify75" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🤖</div>
-                    <h3 class="tool-title">i10X AI</h3>
-                    <p class="tool-description">All-in-one AI workspace with access to ChatGPT, Claude, Gemini and 500+ specialized AI tools for content, marketing, and productivity automation.</p>
-                    <div class="tool-link">Launch i10X AI</div>
-                </a>
-                
-                <a href="https://www.submagic.co" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🎬</div>
-                    <h3 class="tool-title">Submagic</h3>
-                    <p class="tool-description">AI tool for generating trendy captions and boosting engagement for short videos with animated emojis and customization.</p>
-                    <div class="tool-link">Launch Submagic</div>
-                </a>
-                
-                <a href="https://www.capgen.ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">📸</div>
-                    <h3 class="tool-title">CapGen</h3>
-                    <p class="tool-description">AI-powered tool that automatically generates engaging social media captions from images across multiple platforms.</p>
-                    <div class="tool-link">Launch CapGen</div>
-                </a>
-            </div>
+        <div class="categories" id="categoriesContainer">
+            <!-- Categories will be dynamically generated by JavaScript -->
         </div>
         
-        <!-- AI PPT & Presentation Tools -->
-        <div class="category-section">
-            <h2 class="category-title">📊 AI PPT & Presentation Tools</h2>
-            <div class="tools-grid">
-                <a href="https://gamma.app" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🎨</div>
-                    <h3 class="tool-title">Gamma</h3>
-                    <p class="tool-description">Create beautiful presentations, documents, and websites with AI. No design skills required.</p>
-                    <div class="tool-link">Launch Gamma</div>
-                </a>
-                
-                <a href="https://tome.app" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">📖</div>
-                    <h3 class="tool-title">Tome</h3>
-                    <p class="tool-description">AI-powered storytelling format that can generate entire narratives from a simple prompt.</p>
-                    <div class="tool-link">Launch Tome</div>
-                </a>
-                
-                <a href="https://www.beautiful.ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">💎</div>
-                    <h3 class="tool-title">Beautiful.AI</h3>
-                    <p class="tool-description">Smart presentation software that builds stunning slides with AI-powered design assistance.</p>
-                    <div class="tool-link">Launch Beautiful.AI</div>
-                </a>
-                
-                <a href="https://www.slidesai.io" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🎯</div>
-                    <h3 class="tool-title">SlidesAI</h3>
-                    <p class="tool-description">Create presentation slides with AI in seconds. Turn any text into engaging slides automatically.</p>
-                    <div class="tool-link">Launch SlidesAI</div>
-                </a>
-                
-                <a href="https://www.decktopus.com" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🐙</div>
-                    <h3 class="tool-title">Decktopus</h3>
-                    <p class="tool-description">AI presentation maker that creates professional decks with smart layouts and design suggestions.</p>
-                    <div class="tool-link">Launch Decktopus</div>
-                </a>
-                
-                <a href="https://presentations.ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🤖</div>
-                    <h3 class="tool-title">Presentations.AI</h3>
-                    <p class="tool-description">Transform ideas into stunning presentations instantly with AI-powered design and content generation.</p>
-                    <div class="tool-link">Launch Presentations.AI</div>
-                </a>
-                
-                <a href="https://autoppt.com" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">⚡</div>
-                    <h3 class="tool-title">AutoPPT</h3>
-                    <p class="tool-description">AI PowerPoint generator that instantly creates stunning presentations from topics or documents. Supports 100+ languages with beautiful templates.</p>
-                    <div class="tool-link">Launch AutoPPT</div>
-                </a>
-                
-                <a href="https://slidesgpt.com" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🚀</div>
-                    <h3 class="tool-title">SlidesGPT</h3>
-                    <p class="tool-description">AI slideshow maker that converts any content into engaging presentations, saving hours of manual work with automatic formatting.</p>
-                    <div class="tool-link">Launch SlidesGPT</div>
-                </a>
-                
-                <a href="https://www.slidesgo.com/ai/presentation-maker" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🎭</div>
-                    <h3 class="tool-title">Slidesgo AI</h3>
-                    <p class="tool-description">Free AI presentation maker with stunning templates. Create professional slides instantly and export to PowerPoint or Google Slides.</p>
-                    <div class="tool-link">Launch Slidesgo AI</div>
-                </a>
-            </div>
-        </div>
-        
-        <!-- AI PDF & Document Tools -->
-        <div class="category-section">
-            <h2 class="category-title">📄 AI PDF & Document Processing</h2>
-            <div class="tools-grid">
-                <a href="https://www.chatpdf.com" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">💬</div>
-                    <h3 class="tool-title">ChatPDF</h3>
-                    <p class="tool-description">Chat with any PDF document. Ask questions, get summaries, and find information instantly.</p>
-                    <div class="tool-link">Launch ChatPDF</div>
-                </a>
-                
-                <a href="https://www.pdfgpt.io" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🧠</div>
-                    <h3 class="tool-title">PDF GPT</h3>
-                    <p class="tool-description">AI-powered PDF reader that lets you interact with documents using natural language queries.</p>
-                    <div class="tool-link">Launch PDF GPT</div>
-                </a>
-                
-                <a href="https://www.humata.ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🔍</div>
-                    <h3 class="tool-title">Humata AI</h3>
-                    <p class="tool-description">Ask questions about your files and get answers powered by AI. Perfect for research and analysis.</p>
-                    <div class="tool-link">Launch Humata AI</div>
-                </a>
-                
-                <a href="https://www.docsumo.com" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">📋</div>
-                    <h3 class="tool-title">Docsumo</h3>
-                    <p class="tool-description">AI-powered document processing that extracts data from PDFs and images automatically.</p>
-                    <div class="tool-link">Launch Docsumo</div>
-                </a>
-                
-                <a href="https://www.documint.me" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">⚙️</div>
-                    <h3 class="tool-title">Documint</h3>
-                    <p class="tool-description">Generate PDF documents from templates using AI and automation. Perfect for reports and contracts.</p>
-                    <div class="tool-link">Launch Documint</div>
-                </a>
-                
-                <a href="https://www.adobe.com/acrobat/online/pdf-editor.html" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🎨</div>
-                    <h3 class="tool-title">Adobe PDF AI</h3>
-                    <p class="tool-description">Edit, convert, and enhance PDFs with Adobe's AI-powered tools and smart features.</p>
-                    <div class="tool-link">Launch Adobe PDF</div>
-                </a>
-            </div>
-        </div>
-        
-        <!-- AI Writing Enhancement Tools -->
-        <div class="category-section">
-            <h2 class="category-title">✨ AI Writing Enhancement & Optimization</h2>
-            <div class="tools-grid">
-                <a href="https://www.grammarly.com" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">✅</div>
-                    <h3 class="tool-title">Grammarly</h3>
-                    <p class="tool-description">AI writing assistant that helps improve grammar, clarity, engagement, and delivery in your writing.</p>
-                    <div class="tool-link">Launch Grammarly</div>
-                </a>
-                
-                <a href="https://www.notion.so/product/ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">📝</div>
-                    <h3 class="tool-title">Notion AI</h3>
-                    <p class="tool-description">AI writing partner that helps brainstorm, edit, summarize, and transform your writing effortlessly.</p>
-                    <div class="tool-link">Launch Notion AI</div>
-                </a>
-                
-                <a href="https://quillbot.com" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🪶</div>
-                    <h3 class="tool-title">QuillBot</h3>
-                    <p class="tool-description">AI-powered paraphrasing tool that rewrites and enhances your writing while maintaining original meaning.</p>
-                    <div class="tool-link">Launch QuillBot</div>
-                </a>
-                
-                <a href="https://www.wordtune.com" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🎵</div>
-                    <h3 class="tool-title">Wordtune</h3>
-                    <p class="tool-description">AI writing companion that helps you say what you mean with clarity, confidence, and authenticity.</p>
-                    <div class="tool-link">Launch Wordtune</div>
-                </a>
-                
-                <a href="https://www.deepl.com/write" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🔧</div>
-                    <h3 class="tool-title">DeepL Write</h3>
-                    <p class="tool-description">AI writing assistant that helps improve and perfect your writing with intelligent suggestions.</p>
-                    <div class="tool-link">Launch DeepL Write</div>
-                </a>
-                
-                <a href="https://www.hemingwayapp.com" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">📚</div>
-                    <h3 class="tool-title">Hemingway Editor</h3>
-                    <p class="tool-description">AI-powered editor that makes your writing bold and clear by highlighting complex sentences and errors.</p>
-                    <div class="tool-link">Launch Hemingway</div>
-                </a>
-            </div>
-        </div>
-        
-        <!-- AI Content Enhancement & Automation -->
-        <div class="category-section">
-            <h2 class="category-title">🔧 AI Content Enhancement & Automation</h2>
-            <div class="tools-grid">
-                <a href="https://canny.io/features/autopilot?utm_source=toolify&utm_medium=cpc&utm_campaign=toolify-autopilot-lander" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🛠️</div>
-                    <h3 class="tool-title">Canny Autopilot</h3>
-                    <p class="tool-description">AI-powered feedback management that automatically collects, sorts, and responds to user feedback from multiple sources with smart deduplication.</p>
-                    <div class="tool-link">Launch Canny Autopilot</div>
-                </a>
-                
-                <a href="https://autocaption.ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🎤</div>
-                    <h3 class="tool-title">AutoCaption</h3>
-                    <p class="tool-description">AI caption generator for videos with automated subtitle creation and voice-to-text conversion for seamless content accessibility.</p>
-                    <div class="tool-link">Launch AutoCaption</div>
-                </a>
-                
-                <a href="https://dubs.io" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🌐</div>
-                    <h3 class="tool-title">Dubs.io</h3>
-                    <p class="tool-description">All-in-one platform for AI-powered captioning, subtitling, and voice dubbing in 100+ languages for global content creation.</p>
-                    <div class="tool-link">Launch Dubs.io</div>
-                </a>
-                
-                <a href="https://zapcap.ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">⚡</div>
-                    <h3 class="tool-title">ZapCap</h3>
-                    <p class="tool-description">AI video caption generator with automated editing features for creating engaging videos with professional subtitles.</p>
-                    <div class="tool-link">Launch ZapCap</div>
-                </a>
-                
-                <a href="https://syncwords.ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🔄</div>
-                    <h3 class="tool-title">SyncWords</h3>
-                    <p class="tool-description">All-in-one platform for AI-powered captioning, subtitling, and voice dubbing in 100+ languages with precise synchronization.</p>
-                    <div class="tool-link">Launch SyncWords</div>
-                </a>
-                
-                <a href="https://imagetocaption.ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🖼️</div>
-                    <h3 class="tool-title">Image to Caption</h3>
-                    <p class="tool-description">AI-powered tool that generates captions for images and videos across various platforms with contextual understanding.</p>
-                    <div class="tool-link">Launch Image to Caption</div>
-                </a>
-            </div>
-        </div>
-        
-        <!-- AI Specialized Writing Tools -->
-        <div class="category-section">
-            <h2 class="category-title">📚 AI Specialized Writing Tools</h2>
-            <div class="tools-grid">
-                <a href="https://www.toolify.ai/category/ai-blog-generator" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">✍️</div>
-                    <h3 class="tool-title">AI Blog Generator Hub</h3>
-                    <p class="tool-description">Comprehensive collection of AI-powered blog writing tools for creating SEO-optimized articles, posts, and content strategies.</p>
-                    <div class="tool-link">Explore Blog Tools</div>
-                </a>
-                
-                <a href="https://www.toolify.ai/category/ai-report-writing" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">📊</div>
-                    <h3 class="tool-title">AI Report Writing Suite</h3>
-                    <p class="tool-description">Professional AI tools for generating business reports, research documents, and analytical content with data-driven insights.</p>
-                    <div class="tool-link">Explore Report Tools</div>
-                </a>
-                
-                <a href="https://www.toolify.ai/category/ai-novel" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">📖</div>
-                    <h3 class="tool-title">AI Novel Writing Studio</h3>
-                    <p class="tool-description">Creative AI assistants for fiction writing, character development, plot generation, and narrative enhancement for authors and storytellers.</p>
-                    <div class="tool-link">Explore Novel Tools</div>
-                </a>
-                
-                <a href="https://www.toolify.ai/category/audio-to-text-ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🎧</div>
-                    <h3 class="tool-title">AI Audio to Text Hub</h3>
-                    <p class="tool-description">Advanced speech recognition and transcription tools that convert audio recordings into accurate, editable text with AI enhancement.</p>
-                    <div class="tool-link">Explore Audio Tools</div>
-                </a>
-                
-                <a href="https://www.toolify.ai/category/ai-caption-generator" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">📱</div>
-                    <h3 class="tool-title">AI Caption Generator Collection</h3>
-                    <p class="tool-description">Diverse collection of AI tools for generating captions, subtitles, and text overlays for social media, videos, and marketing content.</p>
-                    <div class="tool-link">Explore Caption Tools</div>
-                </a>
-                
-                <a href="https://www.toolify.ai/tool/ppt-ai" target="_blank" rel="noopener" class="tool-card">
-                    <div class="tool-icon">🎯</div>
-                    <h3 class="tool-title">PPT AI Advanced</h3>
-                    <p class="tool-description">Advanced AI presentation generator with professional templates, smart design suggestions, and automated content optimization for business presentations.</p>
-                    <div class="tool-link">Launch PPT AI</div>
-                </a>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p><strong>CopyScript.co</strong> - Your Ultimate AI Content Toolkit</p>
-            <p>Empowering creators with the best AI tools for copywriting, content creation, and document processing.</p>
-            <p>© 2025 CopyScript.co - Boost Your Productivity with AI</p>
-        </div>
+        <footer>
+            <p>&copy; 2024 CopyScript.co - Curated Link Hub</p>
+        </footer>
     </div>
-    
+
     <script>
-        // 🛡️ 防止浏览器扩展程序报错的保护代码
-        (function() {
-            'use strict';
+        // Website data
+        const websites = {
+            'Developer Tools': [
+                {
+                    title: 'GitHub',
+                    url: 'https://github.com',
+                    desc: "The world's largest code hosting platform",
+                    icon: '🐙'
+                },
+                {
+                    title: 'Stack Overflow',
+                    url: 'https://stackoverflow.com',
+                    desc: 'Q&A community for programmers',
+                    icon: '📚'
+                },
+                {
+                    title: 'CodePen',
+                    url: 'https://codepen.io',
+                    desc: 'Frontend code sharing platform',
+                    icon: '✏️'
+                },
+                {
+                    title: 'Figma',
+                    url: 'https://figma.com',
+                    desc: 'Collaborative interface design tool',
+                    icon: '🎨'
+                }
+            ],
+            'AI Tools': [
+                {
+                    title: 'ChatGPT',
+                    url: 'https://chat.openai.com',
+                    desc: 'Conversational AI assistant by OpenAI',
+                    icon: '🤖'
+                },
+                {
+                    title: 'Claude',
+                    url: 'https://claude.ai',
+                    desc: 'AI assistant by Anthropic',
+                    icon: '🧠'
+                },
+                {
+                    title: 'Midjourney',
+                    url: 'https://midjourney.com',
+                    desc: 'AI image generation tool',
+                    icon: '🎭'
+                },
+                {
+                    title: 'Copilot',
+                    url: 'https://copilot.microsoft.com',
+                    desc: 'Microsoft AI assistant',
+                    icon: '🚁'
+                },
+                {
+                    title: 'Skywork.ai',
+                    url: 'https://skywork.ai/',
+                    desc: 'The AI-native data platform for enterprises.',
+                    icon: '☁️'
+                }
+            ],
+            'AI Writing Tools': [
+                {
+                    title: 'Grammarly',
+                    url: 'https://grammarly.com',
+                    desc: 'Grammar, spelling, and style checker',
+                    icon: '📝'
+                },
+                {
+                    title: 'QuillBot',
+                    url: 'https://quillbot.com',
+                    desc: 'Paraphrase, summarize, and rewrite sentences',
+                    icon: '🔄'
+                },
+                {
+                    title: 'Jasper',
+                    url: 'https://www.jasper.ai',
+                    desc: 'Marketing copy and content creation',
+                    icon: '✨'
+                },
+                {
+                    title: 'Copy.ai',
+                    url: 'https://www.copy.ai',
+                    desc: 'Generate creative and business copy',
+                    icon: '©️'
+                },
+                {
+                    title: 'Notion AI',
+                    url: 'https://www.notion.so/product/ai',
+                    desc: 'AI assistant integrated into Notion',
+                    icon: '📖'
+                },
+                {
+                    title: 'Writesonic',
+                    url: 'https://writesonic.com',
+                    desc: 'Versatile AI writing platform',
+                    icon: '✍️'
+                },
+                {
+                    title: 'Automateed',
+                    url: 'https://automateed.com/',
+                    desc: 'All-in-one AI eBook generator',
+                    icon: '📚'
+                },
+                {
+                    title: 'Magicbookifier',
+                    url: 'https://magicbookifier.ai/',
+                    desc: 'AI-powered tool to create books',
+                    icon: '🪄'
+                },
+                {
+                    title: 'Junia.ai',
+                    url: 'https://www.junia.ai/',
+                    desc: 'AI writer for long-form, SEO-optimized content',
+                    icon: '📈'
+                },
+                {
+                    title: 'Cover Letter Copilot',
+                    url: 'https://coverlettercopilot.ai/',
+                    desc: 'AI-powered assistant for writing cover letters',
+                    icon: '📄'
+                },
+                {
+                    title: 'Nureply',
+                    url: 'https://nureply.com/',
+                    desc: 'AI-powered cold email and sales outreach automation',
+                    icon: '📧'
+                }
+            ],
+            'Utilities': [
+                {
+                    title: 'Google',
+                    url: 'https://google.com',
+                    desc: 'Global search engine',
+                    icon: '🔍'
+                },
+                {
+                    title: 'Baidu',
+                    url: 'https://baidu.com',
+                    desc: 'Chinese search engine',
+                    icon: '🔎'
+                },
+                {
+                    title: 'Google Translate',
+                    url: 'https://translate.google.com',
+                    desc: 'Google Translate',
+                    icon: '🌐'
+                },
+                {
+                    title: 'Unsplash',
+                    url: 'https://unsplash.com',
+                    desc: 'Free high-quality photos',
+                    icon: '📷'
+                }
+            ],
+            'Learning Resources': [
+                {
+                    title: 'MDN',
+                    url: 'https://developer.mozilla.org',
+                    desc: 'Web development documentation',
+                    icon: '📖'
+                },
+                {
+                    title: 'freeCodeCamp',
+                    url: 'https://freecodecamp.org',
+                    desc: 'Learn to code for free',
+                    icon: '🎓'
+                },
+                {
+                    title: 'Coursera',
+                    url: 'https://coursera.org',
+                    desc: 'Online learning platform',
+                    icon: '🏫'
+                },
+                {
+                    title: 'YouTube',
+                    url: 'https://youtube.com',
+                    desc: 'Video learning platform',
+                    icon: '📺'
+                }
+            ]
+        };
+
+        // Render categories and websites
+        function renderCategories() {
+            const container = document.getElementById('categoriesContainer');
+            container.innerHTML = '';
             
-            // 阻止扩展程序的错误影响页面
-            window.addEventListener('error', function(e) {
-                if (e.filename && (
-                    e.filename.includes('content') || 
-                    e.filename.includes('extension') || 
-                    e.filename.includes('textVoice') ||
-                    e.filename.includes('content_script')
-                )) {
-                    e.stopImmediatePropagation();
-                    return true;
+            Object.entries(websites).forEach(([category, sites]) => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'category';
+                
+                const categoryTitle = document.createElement('h2');
+                categoryTitle.textContent = category;
+                
+                const linksDiv = document.createElement('div');
+                linksDiv.className = 'links';
+                
+                sites.forEach(site => {
+                    const linkDiv = document.createElement('div');
+                    linkDiv.className = 'link-item';
+                    linkDiv.onclick = () => openLink(site.url);
+                    
+                    linkDiv.innerHTML = `
+                        <div class="link-icon">${site.icon}</div>
+                        <div class="link-text">
+                            <div class="link-title">${site.title}</div>
+                            <div class="link-desc">${site.desc}</div>
+                        </div>
+                    `;
+                    
+                    linksDiv.appendChild(linkDiv);
+                });
+                
+                categoryDiv.appendChild(categoryTitle);
+                categoryDiv.appendChild(linksDiv);
+                container.appendChild(categoryDiv);
+            });
+        }
+
+        // 安全的链接打开函数
+        function openLink(url) {
+            try {
+                // 确保URL是安全的
+                if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
+                    window.open(url, '_blank', 'noopener,noreferrer');
+                } else {
+                    console.error('Invalid URL:', url);
                 }
-            }, true);
-            
-            // 防止 JSON 解析错误
-            const originalParse = JSON.parse;
-            JSON.parse = function(text, reviver) {
-                if (text === undefined || text === 'undefined' || text === null) {
-                    return {};
-                }
-                try {
-                    return originalParse.call(this, text, reviver);
-                } catch (error) {
-                    console.warn('CopyScript.co: 已防止 JSON 解析错误');
-                    return {};
-                }
-            };
-            
-            // 安全执行函数
-            function safeRun(fn, name) {
-                try {
-                    return fn();
-                } catch (error) {
-                    console.warn('CopyScript.co: ' + name + ' 执行时发生错误，已忽略');
-                    return null;
-                }
+            } catch (error) {
+                console.error('Error opening link:', error);
             }
+        }
+
+        // 搜索功能
+        function filterSites(searchTerm) {
+            const categories = document.querySelectorAll('.category');
+            let hasResults = false;
             
-            // 点击追踪（完全安全版本）
-            document.addEventListener('click', function(e) {
-                sa
+            categories.forEach(category => {
+                const links = category.querySelectorAll('.link-item');
+                let categoryHasResults = false;
+                
+                links.forEach(link => {
+                    const title = link.querySelector('.link-title').textContent.toLowerCase();
+                    const desc = link.querySelector('.link-desc').textContent.toLowerCase();
+                    const searchLower = searchTerm.toLowerCase();
+                    
+                    if (title.includes(searchLower) || desc.includes(searchLower)) {
+                        link.style.display = 'flex';
+                        categoryHasResults = true;
+                        hasResults = true;
+                    } else {
+                        link.style.display = 'none';
+                    }
+                });
+                
+                category.style.display = categoryHasResults ? 'block' : 'none';
+            });
+            
+            return hasResults;
+        }
+
+        // 搜索输入监听
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.trim();
+            
+            if (searchTerm === '') {
+                renderCategories(); // 重新渲染所有内容
+            } else {
+                filterSites(searchTerm);
+            }
+        });
+
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCategories();
+        });
+
+        // 错误处理
+        window.addEventListener('error', (e) => {
+            console.error('页面错误:', e.error);
+        });
+
+        // 阻止默认的分析脚本错误
+        window.addEventListener('unhandledrejection', (e) => {
+            if (e.reason && e.reason.message && e.reason.message.includes('JSON')) {
+                e.preventDefault(); // 阻止JSON解析错误显示在控制台
+            }
+        });
+    </script>
+
+    <!-- Google Analytics - 请替换为你的实际跟踪ID -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_GA_TRACKING_ID');
+    </script>
+    -->
+
+    <!-- Microsoft Clarity - 请替换为你的实际项目ID -->
+    <!-- 
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "YOUR_CLARITY_PROJECT_ID");
+    </script>
+    -->
+</body>
+</html> 
