@@ -112,9 +112,9 @@
         }
         
         .links {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
         
         .link-item {
@@ -248,29 +248,25 @@
                     title: 'GitHub',
                     url: 'https://github.com',
                     desc: "The world's largest code hosting platform",
-                    icon: '🐙',
-                    desc_cn: '全球最大的代码托管与协作平台。'
+                    icon: '🐙'
                 },
                 {
                     title: 'Stack Overflow',
                     url: 'https://stackoverflow.com',
                     desc: 'Q&A community for programmers',
-                    icon: '📚',
-                    desc_cn: '面向程序员的专业问答社区。'
+                    icon: '📚'
                 },
                 {
                     title: 'CodePen',
                     url: 'https://codepen.io',
                     desc: 'Frontend code sharing platform',
-                    icon: '✏️',
-                    desc_cn: '在线前端代码编辑器和分享平台。'
+                    icon: '✏️'
                 },
                 {
                     title: 'Figma',
                     url: 'https://figma.com',
                     desc: 'Collaborative interface design tool',
-                    icon: '🎨',
-                    desc_cn: '强大的协作式界面设计工具。'
+                    icon: '🎨'
                 }
             ],
             'AI Tools': [
@@ -278,36 +274,31 @@
                     title: 'ChatGPT',
                     url: 'https://chat.openai.com',
                     desc: 'Conversational AI assistant by OpenAI',
-                    icon: '🤖',
-                    desc_cn: 'OpenAI出品的通用对话AI助手。'
+                    icon: '🤖'
                 },
                 {
                     title: 'Claude',
                     url: 'https://claude.ai',
                     desc: 'AI assistant by Anthropic',
-                    icon: '🧠',
-                    desc_cn: 'Anthropic公司开发的AI助手。'
+                    icon: '🧠'
                 },
                 {
                     title: 'Midjourney',
                     url: 'https://midjourney.com',
                     desc: 'AI image generation tool',
-                    icon: '🎭',
-                    desc_cn: '顶级的AI绘画和图像生成工具。'
+                    icon: '🎭'
                 },
                 {
                     title: 'Copilot',
                     url: 'https://copilot.microsoft.com',
                     desc: 'Microsoft AI assistant',
-                    icon: '🚁',
-                    desc_cn: '微软出品的AI编程与对话助手。'
+                    icon: '🚁'
                 },
                 {
                     title: 'Skywork.ai',
                     url: 'https://skywork.ai/',
                     desc: 'The AI-native data platform for enterprises.',
-                    icon: '☁️',
-                    desc_cn: '面向企业的AI原生数据平台。'
+                    icon: '☁️'
                 }
             ],
             'AI Writing Tools': [
@@ -315,78 +306,67 @@
                     title: 'Grammarly',
                     url: 'https://grammarly.com',
                     desc: 'Grammar, spelling, and style checker',
-                    icon: '📝',
-                    desc_cn: '强大的语法、拼写和风格检查工具。'
+                    icon: '📝'
                 },
                 {
                     title: 'QuillBot',
                     url: 'https://quillbot.com',
                     desc: 'Paraphrase, summarize, and rewrite sentences',
-                    icon: '🔄',
-                    desc_cn: '用于转述、总结和改写句子的AI工具。'
+                    icon: '🔄'
                 },
                 {
                     title: 'Jasper',
                     url: 'https://www.jasper.ai',
                     desc: 'Marketing copy and content creation',
-                    icon: '✨',
-                    desc_cn: '专注于营销文案和内容创作的AI。'
+                    icon: '✨'
                 },
                 {
                     title: 'Copy.ai',
                     url: 'https://www.copy.ai',
                     desc: 'Generate creative and business copy',
-                    icon: '©️',
-                    desc_cn: '快速生成高质量营销文案和内容。'
+                    icon: '©️'
                 },
                 {
                     title: 'Notion AI',
                     url: 'https://www.notion.so/product/ai',
                     desc: 'AI assistant integrated into Notion',
-                    icon: '📖',
-                    desc_cn: '集成在Notion笔记中的AI写作助手。'
+                    icon: '📖'
                 },
                 {
                     title: 'Writesonic',
                     url: 'https://writesonic.com',
                     desc: 'Versatile AI writing platform',
-                    icon: '✍️',
-                    desc_cn: '多功能的AI内容创作与改写平台。'
+                    icon: '✍️'
                 },
                 {
                     title: 'Automateed',
                     url: 'https://automateed.com/',
                     desc: 'All-in-one AI eBook generator',
-                    icon: '📚',
-                    desc_cn: '一站式AI电子书与报告生成器。'
+                    icon: '📚'
                 },
                 {
                     title: 'Magicbookifier',
                     url: 'https://magicbookifier.ai/',
                     desc: 'AI-powered tool to create books',
-                    icon: '🪄',
-                    desc_cn: '使用AI快速创建和设计精美书籍。'
+                    icon: '🪄'
                 },
                 {
                     title: 'Junia.ai',
                     url: 'https://www.junia.ai/',
                     desc: 'AI writer for long-form, SEO-optimized content',
-                    icon: '📈',
-                    desc_cn: '用于撰写长篇SEO优化文章的AI写手。'
+                    icon: '📈'
                 },
                 {
                     title: 'Cover Letter Copilot',
                     url: 'https://coverlettercopilot.ai/',
                     desc: 'AI-powered assistant for writing cover letters',
-                    icon: '📄',
-                    desc_cn: '这是一款AI代写求职信的工具。'
+                    icon: '📄'
                 },
                 {
                     title: 'Nureply',
                     url: 'https://nureply.com/',
                     desc: 'AI-powered cold email and sales outreach automation',
-                    icon: '📧',
-                    desc_cn: 'AI驱动的销售邮件自动化工具。'
+                    icon: '📧'
                 }
             ],
             'Utilities': [
@@ -394,29 +374,25 @@
                     title: 'Google',
                     url: 'https://google.com',
                     desc: 'Global search engine',
-                    icon: '🔍',
-                    desc_cn: '全球最强大的搜索引擎。'
+                    icon: '🔍'
                 },
                 {
                     title: 'Baidu',
                     url: 'https://baidu.com',
                     desc: 'Chinese search engine',
-                    icon: '🔎',
-                    desc_cn: '领先的中文信息和服务提供商。'
+                    icon: '🔎'
                 },
                 {
                     title: 'Google Translate',
                     url: 'https://translate.google.com',
                     desc: 'Google Translate',
-                    icon: '🌐',
-                    desc_cn: 'Google提供的免费在线翻译服务。'
+                    icon: '🌐'
                 },
                 {
                     title: 'Unsplash',
                     url: 'https://unsplash.com',
                     desc: 'Free high-quality photos',
-                    icon: '📷',
-                    desc_cn: '可自由使用的高质量图片社区。'
+                    icon: '📷'
                 }
             ],
             'Learning Resources': [
@@ -424,29 +400,25 @@
                     title: 'MDN',
                     url: 'https://developer.mozilla.org',
                     desc: 'Web development documentation',
-                    icon: '📖',
-                    desc_cn: 'Web技术领域的权威开发者文档。'
+                    icon: '📖'
                 },
                 {
                     title: 'freeCodeCamp',
                     url: 'https://freecodecamp.org',
                     desc: 'Learn to code for free',
-                    icon: '🎓',
-                    desc_cn: '免费学习编程的在线社区。'
+                    icon: '🎓'
                 },
                 {
                     title: 'Coursera',
                     url: 'https://coursera.org',
                     desc: 'Online learning platform',
-                    icon: '🏫',
-                    desc_cn: '提供全球顶尖大学的在线课程。'
+                    icon: '🏫'
                 },
                 {
                     title: 'YouTube',
                     url: 'https://youtube.com',
                     desc: 'Video learning platform',
-                    icon: '📺',
-                    desc_cn: '全球最大的视频分享与学习平台。'
+                    icon: '📺'
                 }
             ]
         };
@@ -489,7 +461,7 @@
                         <div class="link-icon">${site.icon}</div>
                         <div class="link-text">
                             <div class="link-title">${site.title}</div>
-                            <div class="link-desc">${site.desc_cn}</div>
+                            <div class="link-desc">${site.desc}</div>
                         </div>
                     `;
                     
