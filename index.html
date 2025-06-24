@@ -44,12 +44,11 @@
             color: rgba(255,255,255,0.9);
             font-size: 1.2rem;
         }
-        
+
         .category-nav {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: -10px;
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
@@ -104,7 +103,7 @@
             transform: translateY(-5px);
         }
         
-        .category h2 {
+        .category h3 {
             color: #5a67d8;
             margin-bottom: 20px;
             font-size: 1.5rem;
@@ -114,16 +113,16 @@
         
         .links {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
         }
         
         .link-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 15px 5px;
+            justify-content: flex-start;
+            padding: 15px 10px;
             border-radius: 8px;
             text-decoration: none;
             color: #4a5568;
@@ -131,7 +130,7 @@
             transition: all 0.3s ease;
             cursor: pointer;
             text-align: center;
-            aspect-ratio: 1 / 1;
+            min-height: 140px;
         }
         
         .link-item:hover {
@@ -155,21 +154,25 @@
         }
         
         .link-text {
-            flex: 1;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
         }
         
         .link-title {
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             line-height: 1.3;
             word-break: break-word;
+            margin-bottom: 5px;
         }
         
         .link-desc {
-            display: none;
+            display: block;
+            font-size: 0.75rem;
+            color: #718096;
+            line-height: 1.4;
         }
         
         footer {
@@ -180,24 +183,20 @@
         }
         
         /* 响应式设计 */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .categories {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 15px;
-            }
+        @media (max-width: 1400px) {
+            .links { grid-template-columns: repeat(10, 1fr); }
         }
-        
-        @media (max-width: 480px) {
-            .links {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        @media (max-width: 1200px) {
+            .links { grid-template-columns: repeat(8, 1fr); }
+        }
+        @media (max-width: 992px) {
+            .links { grid-template-columns: repeat(6, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .links { grid-template-columns: repeat(4, 1fr); }
+        }
+        @media (max-width: 576px) {
+            .links { grid-template-columns: repeat(3, 1fr); }
         }
     </style>
 </head>
@@ -207,7 +206,7 @@
             <h1>🌟 Link Hub</h1>
             <p class="subtitle">Discover quality websites and boost your productivity</p>
         </header>
-        
+
         <nav class="category-nav" id="categoryNav">
             <!-- Category links will be injected here by JavaScript -->
         </nav>
@@ -227,31 +226,43 @@
 
     <script>
         // Website data
+        const categoryOrder = [
+            'AI Writing Tools',
+            'AI Tools',
+            'Developer Tools',
+            'Utilities',
+            'Learning Resources'
+        ];
+
         const websites = {
             'Developer Tools': [
                 {
                     title: 'GitHub',
                     url: 'https://github.com',
                     desc: "The world's largest code hosting platform",
-                    icon: '🐙'
+                    icon: '🐙',
+                    desc_cn: '全球最大的代码托管与协作平台。'
                 },
                 {
                     title: 'Stack Overflow',
                     url: 'https://stackoverflow.com',
                     desc: 'Q&A community for programmers',
-                    icon: '📚'
+                    icon: '📚',
+                    desc_cn: '面向程序员的专业问答社区。'
                 },
                 {
                     title: 'CodePen',
                     url: 'https://codepen.io',
                     desc: 'Frontend code sharing platform',
-                    icon: '✏️'
+                    icon: '✏️',
+                    desc_cn: '在线前端代码编辑器和分享平台。'
                 },
                 {
                     title: 'Figma',
                     url: 'https://figma.com',
                     desc: 'Collaborative interface design tool',
-                    icon: '🎨'
+                    icon: '🎨',
+                    desc_cn: '强大的协作式界面设计工具。'
                 }
             ],
             'AI Tools': [
@@ -259,31 +270,36 @@
                     title: 'ChatGPT',
                     url: 'https://chat.openai.com',
                     desc: 'Conversational AI assistant by OpenAI',
-                    icon: '🤖'
+                    icon: '🤖',
+                    desc_cn: 'OpenAI出品的通用对话AI助手。'
                 },
                 {
                     title: 'Claude',
                     url: 'https://claude.ai',
                     desc: 'AI assistant by Anthropic',
-                    icon: '🧠'
+                    icon: '🧠',
+                    desc_cn: 'Anthropic公司开发的AI助手。'
                 },
                 {
                     title: 'Midjourney',
                     url: 'https://midjourney.com',
                     desc: 'AI image generation tool',
-                    icon: '🎭'
+                    icon: '🎭',
+                    desc_cn: '顶级的AI绘画和图像生成工具。'
                 },
                 {
                     title: 'Copilot',
                     url: 'https://copilot.microsoft.com',
                     desc: 'Microsoft AI assistant',
-                    icon: '🚁'
+                    icon: '🚁',
+                    desc_cn: '微软出品的AI编程与对话助手。'
                 },
                 {
                     title: 'Skywork.ai',
                     url: 'https://skywork.ai/',
                     desc: 'The AI-native data platform for enterprises.',
-                    icon: '☁️'
+                    icon: '☁️',
+                    desc_cn: '面向企业的AI原生数据平台。'
                 }
             ],
             'AI Writing Tools': [
@@ -291,67 +307,78 @@
                     title: 'Grammarly',
                     url: 'https://grammarly.com',
                     desc: 'Grammar, spelling, and style checker',
-                    icon: '📝'
+                    icon: '📝',
+                    desc_cn: '强大的语法、拼写和风格检查工具。'
                 },
                 {
                     title: 'QuillBot',
                     url: 'https://quillbot.com',
                     desc: 'Paraphrase, summarize, and rewrite sentences',
-                    icon: '🔄'
+                    icon: '🔄',
+                    desc_cn: '用于转述、总结和改写句子的AI工具。'
                 },
                 {
                     title: 'Jasper',
                     url: 'https://www.jasper.ai',
                     desc: 'Marketing copy and content creation',
-                    icon: '✨'
+                    icon: '✨',
+                    desc_cn: '专注于营销文案和内容创作的AI。'
                 },
                 {
                     title: 'Copy.ai',
                     url: 'https://www.copy.ai',
                     desc: 'Generate creative and business copy',
-                    icon: '©️'
+                    icon: '©️',
+                    desc_cn: '快速生成高质量营销文案和内容。'
                 },
                 {
                     title: 'Notion AI',
                     url: 'https://www.notion.so/product/ai',
                     desc: 'AI assistant integrated into Notion',
-                    icon: '📖'
+                    icon: '📖',
+                    desc_cn: '集成在Notion笔记中的AI写作助手。'
                 },
                 {
                     title: 'Writesonic',
                     url: 'https://writesonic.com',
                     desc: 'Versatile AI writing platform',
-                    icon: '✍️'
+                    icon: '✍️',
+                    desc_cn: '多功能的AI内容创作与改写平台。'
                 },
                 {
                     title: 'Automateed',
                     url: 'https://automateed.com/',
                     desc: 'All-in-one AI eBook generator',
-                    icon: '📚'
+                    icon: '📚',
+                    desc_cn: '一站式AI电子书与报告生成器。'
                 },
                 {
                     title: 'Magicbookifier',
                     url: 'https://magicbookifier.ai/',
                     desc: 'AI-powered tool to create books',
-                    icon: '🪄'
+                    icon: '🪄',
+                    desc_cn: '使用AI快速创建和设计精美书籍。'
                 },
                 {
                     title: 'Junia.ai',
                     url: 'https://www.junia.ai/',
                     desc: 'AI writer for long-form, SEO-optimized content',
-                    icon: '📈'
+                    icon: '📈',
+                    desc_cn: '用于撰写长篇SEO优化文章的AI写手。'
                 },
                 {
                     title: 'Cover Letter Copilot',
                     url: 'https://coverlettercopilot.ai/',
                     desc: 'AI-powered assistant for writing cover letters',
-                    icon: '📄'
+                    icon: '📄',
+                    desc_cn: '这是一款AI代写求职信的工具。'
                 },
                 {
                     title: 'Nureply',
                     url: 'https://nureply.com/',
                     desc: 'AI-powered cold email and sales outreach automation',
-                    icon: '📧'
+                    icon: '📧',
+                    desc_cn: 'AI驱动的销售邮件自动化工具。'
                 }
             ],
             'Utilities': [
@@ -359,25 +386,29 @@
                     title: 'Google',
                     url: 'https://google.com',
                     desc: 'Global search engine',
-                    icon: '🔍'
+                    icon: '🔍',
+                    desc_cn: '全球最强大的搜索引擎。'
                 },
                 {
                     title: 'Baidu',
                     url: 'https://baidu.com',
                     desc: 'Chinese search engine',
-                    icon: '🔎'
+                    icon: '🔎',
+                    desc_cn: '领先的中文信息和服务提供商。'
                 },
                 {
                     title: 'Google Translate',
                     url: 'https://translate.google.com',
                     desc: 'Google Translate',
-                    icon: '🌐'
+                    icon: '🌐',
+                    desc_cn: 'Google提供的免费在线翻译服务。'
                 },
                 {
                     title: 'Unsplash',
                     url: 'https://unsplash.com',
                     desc: 'Free high-quality photos',
-                    icon: '📷'
+                    icon: '📷',
+                    desc_cn: '可自由使用的高质量图片社区。'
                 }
             ],
             'Learning Resources': [
@@ -385,25 +416,29 @@
                     title: 'MDN',
                     url: 'https://developer.mozilla.org',
                     desc: 'Web development documentation',
-                    icon: '📖'
+                    icon: '📖',
+                    desc_cn: 'Web技术领域的权威开发者文档。'
                 },
                 {
                     title: 'freeCodeCamp',
                     url: 'https://freecodecamp.org',
                     desc: 'Learn to code for free',
-                    icon: '🎓'
+                    icon: '🎓',
+                    desc_cn: '免费学习编程的在线社区。'
                 },
                 {
                     title: 'Coursera',
                     url: 'https://coursera.org',
                     desc: 'Online learning platform',
-                    icon: '🏫'
+                    icon: '🏫',
+                    desc_cn: '提供全球顶尖大学的在线课程。'
                 },
                 {
                     title: 'YouTube',
                     url: 'https://youtube.com',
                     desc: 'Video learning platform',
-                    icon: '📺'
+                    icon: '📺',
+                    desc_cn: '全球最大的视频分享与学习平台。'
                 }
             ]
         };
@@ -415,21 +450,24 @@
             container.innerHTML = '';
             navContainer.innerHTML = '';
             
-            Object.entries(websites).forEach(([category, sites]) => {
-                const categoryId = 'category-' + category.replace(/\s+/g, '-').toLowerCase();
+            categoryOrder.forEach(categoryName => {
+                const sites = websites[categoryName];
+                if (!sites) return;
+
+                const categoryId = 'category-' + categoryName.replace(/\s+/g, '-').toLowerCase();
 
                 // Create nav link
                 const navLink = document.createElement('a');
                 navLink.href = '#' + categoryId;
-                navLink.textContent = category;
+                navLink.textContent = categoryName;
                 navContainer.appendChild(navLink);
 
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'category';
                 categoryDiv.id = categoryId;
                 
-                const categoryTitle = document.createElement('h2');
-                categoryTitle.textContent = category;
+                const categoryTitle = document.createElement('h3');
+                categoryTitle.textContent = categoryName;
                 
                 const linksDiv = document.createElement('div');
                 linksDiv.className = 'links';
@@ -443,7 +481,7 @@
                         <div class="link-icon">${site.icon}</div>
                         <div class="link-text">
                             <div class="link-title">${site.title}</div>
-                            <div class="link-desc">${site.desc}</div>
+                            <div class="link-desc">${site.desc_cn}</div>
                         </div>
                     `;
                     
@@ -456,7 +494,7 @@
             });
         }
 
-        // 安全的链接打开函数
+        // Safe link opening function
         function openLink(url) {
             try {
                 // 确保URL是安全的
@@ -470,7 +508,7 @@
             }
         }
 
-        // 搜索功能
+        // Search functionality
         function filterSites(searchTerm) {
             const categories = document.querySelectorAll('.category');
             let hasResults = false;
@@ -499,18 +537,18 @@
             return hasResults;
         }
 
-        // 搜索输入监听
+        // Search input listener
         document.getElementById('searchInput').addEventListener('input', (e) => {
             const searchTerm = e.target.value.trim();
             
             if (searchTerm === '') {
-                renderCategories(); // 重新渲染所有内容
+                renderCategories(); // Re-render all content
             } else {
                 filterSites(searchTerm);
             }
         });
 
-        // 初始化页面
+        // Initialize the page
         document.addEventListener('DOMContentLoaded', () => {
             renderCategories();
 
@@ -521,24 +559,27 @@
                     const targetId = e.target.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
+                        // Use a little offset to account for fixed headers if any
+                        const offsetPosition = targetElement.offsetTop - 20;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
                         });
                     }
                 }
             });
         });
 
-        // 错误处理
+        // Error handling
         window.addEventListener('error', (e) => {
             console.error('页面错误:', e.error);
         });
 
-        // 阻止默认的分析脚本错误
+        // Prevent default analysis script errors
         window.addEventListener('unhandledrejection', (e) => {
             if (e.reason && e.reason.message && e.reason.message.includes('JSON')) {
-                e.preventDefault(); // 阻止JSON解析错误显示在控制台
+                e.preventDefault(); // Prevent JSON parsing errors from appearing in the console
             }
         });
     </script>
