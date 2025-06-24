@@ -44,29 +44,6 @@
             color: rgba(255,255,255,0.9);
             font-size: 1.2rem;
         }
-
-        .category-nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .category-nav a {
-            text-decoration: none;
-            color: white;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.3s ease;
-        }
-
-        .category-nav a:hover {
-            background: rgba(255, 255, 255, 0.4);
-        }
         
         .search-box {
             background: white;
@@ -87,20 +64,16 @@
         
         .categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            align-items: start;
         }
         
         .category {
             background: white;
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .category:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
         
         .category h3 {
@@ -214,10 +187,6 @@
             <h1>🌟 Link Hub</h1>
             <p class="subtitle">Discover quality websites and boost your productivity</p>
         </header>
-
-        <nav class="category-nav" id="categoryNav">
-            <!-- Category links will be injected here by JavaScript -->
-        </nav>
         
         <div class="search-box">
             <input type="text" class="search-input" placeholder="Search websites..." id="searchInput">
@@ -426,25 +395,14 @@
         // Render categories and websites
         function renderCategories() {
             const container = document.getElementById('categoriesContainer');
-            const navContainer = document.getElementById('categoryNav');
             container.innerHTML = '';
-            navContainer.innerHTML = '';
             
             categoryOrder.forEach(categoryName => {
                 const sites = websites[categoryName];
                 if (!sites) return;
 
-                const categoryId = 'category-' + categoryName.replace(/\s+/g, '-').toLowerCase();
-
-                // Create nav link
-                const navLink = document.createElement('a');
-                navLink.href = '#' + categoryId;
-                navLink.textContent = categoryName;
-                navContainer.appendChild(navLink);
-
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'category';
-                categoryDiv.id = categoryId;
                 
                 const categoryTitle = document.createElement('h3');
                 categoryTitle.textContent = categoryName;
@@ -531,24 +489,6 @@
         // Initialize the page
         document.addEventListener('DOMContentLoaded', () => {
             renderCategories();
-
-            // Add smooth scrolling for nav links
-            document.getElementById('categoryNav').addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    e.preventDefault();
-                    const targetId = e.target.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        // Use a little offset to account for fixed headers if any
-                        const offsetPosition = targetElement.offsetTop - 20;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
-                        });
-                    }
-                }
-            });
         });
 
         // Error handling
